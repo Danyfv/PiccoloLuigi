@@ -1,2 +1,2 @@
 # PiccoloLuigi
-Semplice gioco fatto con Godot engine 3.0
+Semplice gioco fatto con Godot 3.0
