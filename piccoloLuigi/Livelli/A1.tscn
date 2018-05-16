@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/SfondoBrutto.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 38.7241, 2.46391 )
+
+[node name="terreno" type="StaticBody2D"]
+
+position = Vector2( 511.241, 406.397 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.573823, 121.578 )
+scale = Vector2( 16.5529, 14.533 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+
