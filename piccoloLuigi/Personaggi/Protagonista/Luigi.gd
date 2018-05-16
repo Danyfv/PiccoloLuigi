@@ -24,7 +24,7 @@ var jumping = false
 var prev_jump_pressed = false
 
 var anim_player = null
-var anim = ""
+var anim = "StopDx"
 var new_anim = ""
 
 func _ready():
@@ -73,6 +73,13 @@ func _physics_process(delta):
 			
 		elif anim == "WalkSx" or (anim == "JumpSx" and is_on_floor()):
 			anim = "StopSx"
+			
+		elif is_on_floor() == false:
+			if anim == "StopDx":
+				anim = "JumpDx"
+				
+			if anim == "StopSx":
+				anim = "JumpSx"
 	
 	if stop:
 		var vsign = sign(velocity.x)
@@ -102,6 +109,7 @@ func _physics_process(delta):
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
 		jumping = true
+
 		
 
 
