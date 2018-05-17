@@ -22,5 +22,5 @@ window/size/height=700
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
-environment/default_clear_color=Color( 0.0390778, 0.632571, 0.769531, 1 )
+environment/default_clear_color=Color( 0.0673828, 0.304626, 0.359375, 1 )
 environment/default_environment="res://default_env.tres"

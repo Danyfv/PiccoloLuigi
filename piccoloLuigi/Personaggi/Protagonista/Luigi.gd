@@ -38,6 +38,7 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
+	var down = Input.is_action_pressed("ui_down")
 	
 	var stop = true
 
@@ -47,7 +48,7 @@ func _physics_process(delta):
 		anim_player.play(anim)
 	
 	
-	if walk_left:
+	if walk_left and down == false:
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
@@ -55,10 +56,12 @@ func _physics_process(delta):
 			anim = "WalkSx"
 		else:
 			anim = "JumpSx"
-			
+	
+	elif walk_left  and down:
+			anim = "DownSx"
 
 			
-	elif walk_right:
+	elif walk_right and down == false:
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
@@ -67,11 +70,18 @@ func _physics_process(delta):
 		else:
 			anim = "JumpDx"
 			
+	elif walk_right and down:
+			anim = "DownDx"
+			
+	elif down and (anim == "StopDx" or anim == "JumpDx"):
+		anim = "DownDx"
+	elif down and (anim == "StopSx" or anim == "JumpSx"):
+		anim = "DownSx"
 	else:
-		if anim == "WalkDx" or (anim == "JumpDx" and is_on_floor()):
+		if anim == "WalkDx" or (anim == "JumpDx" and is_on_floor()) or (anim == "DownDx" and down == false):
 			anim = "StopDx"
 			
-		elif anim == "WalkSx" or (anim == "JumpSx" and is_on_floor()):
+		elif anim == "WalkSx" or (anim == "JumpSx" and is_on_floor()) or (anim == "DownSx" and down == false):
 			anim = "StopSx"
 			
 		elif is_on_floor() == false:
@@ -80,7 +90,8 @@ func _physics_process(delta):
 				
 			if anim == "StopSx":
 				anim = "JumpSx"
-	
+		
+		
 	if stop:
 		var vsign = sign(velocity.x)
 		var vlen = abs(velocity.x)
@@ -109,6 +120,9 @@ func _physics_process(delta):
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
 		jumping = true
+		
+	if down:
+		velocity.y = JUMP_SPEED * 2
 
 		
 

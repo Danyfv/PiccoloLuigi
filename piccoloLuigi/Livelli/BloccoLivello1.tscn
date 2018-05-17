@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.gd" type="Script" id=1]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/BloccoLivello1.png" type="Texture" id=2]
+
+[node name="StaticBody2D" type="Area2D"]
+
+position = Vector2( 181, 180 )
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -0.139022, 0.253179 )
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+scale = Vector2( 0.5, 0.5 )
+build_mode = 0
+polygon = PoolVector2Array( -21.5187, -21.5797, -14.9168, -25.981, 13.6915, -25.981, 22.0539, -22.0198, 25.5749, -15.4179, 26.015, 15.8311, 22.494, 21.5527, 16.3322, 25.954, -15.3569, 25.5138, -21.9588, 21.5527, -25.4798, 14.5107, -24.5996, -16.2982 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -27.0
+margin_top = -31.0
+margin_right = 27.0
+margin_bottom = -17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Livello 1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="body_entered" from="." to="." method="_on_StaticBody2D_body_entered"]
+
+
