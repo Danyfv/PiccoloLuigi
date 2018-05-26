@@ -36,9 +36,9 @@ func _input(event):
 		if event.is_pressed():
 			var screen_res = OS.get_window_size()
 			if event.position[0] < screen_res.x / 2:
-				print("left!")
+				get_node('.').hide()
 			if event.position[0] >= screen_res.x / 2:
-				print("right!")
+				get_node('.').show()
 
 
 func _physics_process(delta):
