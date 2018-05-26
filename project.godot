@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 window/size/width=600
 window/size/height=700
+window/handheld/emulate_touchscreen=true
 
 [rendering]
 

@@ -29,6 +29,16 @@ var new_anim = ""
 
 func _ready():
 	anim_player = get_node("Sprite/AnimationPlayer")
+	set_process_input(true)
+	
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.is_pressed():
+			var screen_res = OS.get_window_size()
+			if event.position[0] < screen_res.x / 2:
+				print("left!")
+			if event.position[0] >= screen_res.x / 2:
+				print("right!")
 
 
 func _physics_process(delta):
