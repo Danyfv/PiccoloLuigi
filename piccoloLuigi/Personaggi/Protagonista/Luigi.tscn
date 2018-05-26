@@ -167,11 +167,10 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
-offset = Vector2( 0, -70 )
 anchor_mode = 1
 rotating = true
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.7, 0.7 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
