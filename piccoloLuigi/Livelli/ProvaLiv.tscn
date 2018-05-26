@@ -4,7 +4,7 @@
 [ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 position = Vector2( 1, 0 )
 
