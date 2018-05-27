@@ -149,7 +149,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[node name="Luigi" type="KinematicBody2D" index="0"]
+[node name="Luigi" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -229,7 +229,5 @@ anims/StopSx = SubResource( 6 )
 anims/WalkDx = SubResource( 7 )
 anims/WalkSx = SubResource( 8 )
 blend_times = [  ]
-
-[node name="Node" type="Node" parent="." index="4"]
 
 

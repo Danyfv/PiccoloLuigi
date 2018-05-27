@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/background.png-08fae51748a88b3b9e6a5f1e724a7545.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="09a12160a78dd7f53d1f72299944e64e"
+source_file="res://piccoloLuigi/Immagini/Ambiente/background.png"
+source_md5="0ec31e1a99ecb526afee996afa39dc08"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="154b01abba919070d184927d1b8a5680"
+dest_files=[ "res://.import/background.png-08fae51748a88b3b9e6a5f1e724a7545.stex" ]
+dest_md5="9fa47e39702db7d037bd8bcd51f5ade6"
 
 [params]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://piccoloLuigi/Livelli/Menu1.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://piccoloLuigi/Immagini/Menu/BottoneStart.png" type="Texture" id=3]
 [ext_resource path="res://piccoloLuigi/Immagini/Menu/BottoneExit.png" type="Texture" id=4]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/background.png" type="Texture" id=5]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/parallax-mountain-mountains.png" type="Texture" id=6]
 
 [node name="MarginContainer" type="MarginContainer" index="0"]
 
@@ -119,6 +121,21 @@ group = null
 icon = ExtResource( 4 )
 flat = true
 align = 1
+
+[node name="background" type="Sprite" parent="." index="1"]
+
+position = Vector2( 641, 360.5 )
+scale = Vector2( 4.69853, 4.50625 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="parallax-mountain-mountains" type="Sprite" parent="." index="2"]
+
+position = Vector2( 636.5, 432 )
+scale = Vector2( 2.51287, 4.175 )
+texture = ExtResource( 6 )
 
 [connection signal="button_down" from="HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_button_down"]
 
