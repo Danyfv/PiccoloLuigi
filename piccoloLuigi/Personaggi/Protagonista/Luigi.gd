@@ -116,10 +116,13 @@ func _physics_process(delta):
 		velocity.x = vlen * vsign
 	
 	# Integrate forces to velocity
-	velocity += force * delta	
+	velocity += force * delta
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
+	if down:
+		velocity.y = JUMP_SPEED * 2
+		
 	if is_on_floor():
 		on_air_time = 0
 		
@@ -128,18 +131,14 @@ func _physics_process(delta):
 		jumping = false
 
 	
-	if on_air_time < JUMP_MAX_AIRBORNE_TIME and (jump or button_walk_jump) and not prev_jump_pressed and not jumping:
+	if on_air_time < JUMP_MAX_AIRBORNE_TIME  and (jump or button_walk_jump) and not prev_jump_pressed and not jumping and not down:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
 		jumping = true
 		
-	if down:
-		velocity.y = JUMP_SPEED * 2
-
-		
-
-
+	
 	on_air_time += delta
 	prev_jump_pressed = jump
+
 
