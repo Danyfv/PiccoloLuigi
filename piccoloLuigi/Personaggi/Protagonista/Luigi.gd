@@ -31,14 +31,14 @@ func _ready():
 	anim_player = get_node("Sprite/AnimationPlayer")
 	set_process_input(true)
 	
-func _input(event):
-	if event is InputEventScreenTouch:
-		if event.is_pressed():
-			var screen_res = OS.get_window_size()
-			if event.position[0] < screen_res.x / 2:
-				get_node('.').hide()
-			if event.position[0] >= screen_res.x / 2:
-				get_node('.').show()
+#func _input(event):
+	#if event is InputEventScreenTouch:
+		#if event.is_pressed():
+			#var screen_res = OS.get_window_size()
+			#if event.position[0] < screen_res.x / 2:
+				#get_node('.').hide()
+			#if event.position[0] >= screen_res.x / 2:
+				#get_node('.').show()
 
 
 func _physics_process(delta):
@@ -49,6 +49,9 @@ func _physics_process(delta):
 	var walk_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
 	var down = Input.is_action_pressed("ui_down")
+	var button_walk_jump = get_node("CanvasLayer/Up").is_pressed()
+	var button_walk_right = get_node("CanvasLayer/DX").is_pressed()
+	var button_walk_left = get_node("CanvasLayer/SX").is_pressed()
 	
 	var stop = true
 
@@ -58,7 +61,7 @@ func _physics_process(delta):
 		anim_player.play(anim)
 	
 	
-	if walk_left and down == false:
+	if (walk_left or button_walk_left) and down == false:
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
@@ -67,11 +70,11 @@ func _physics_process(delta):
 		else:
 			anim = "JumpSx"
 	
-	elif walk_left  and down:
+	elif (walk_left or button_walk_left)  and down:
 			anim = "DownSx"
 
 			
-	elif walk_right and down == false:
+	elif (walk_right or button_walk_right) and down == false:
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
@@ -80,7 +83,7 @@ func _physics_process(delta):
 		else:
 			anim = "JumpDx"
 			
-	elif walk_right and down:
+	elif (walk_right or button_walk_right) and down:
 			anim = "DownDx"
 			
 	elif down and (anim == "StopDx" or anim == "JumpDx"):
@@ -125,7 +128,7 @@ func _physics_process(delta):
 		jumping = false
 
 	
-	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping:
+	if on_air_time < JUMP_MAX_AIRBORNE_TIME and (jump or button_walk_jump) and not prev_jump_pressed and not jumping:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
@@ -139,3 +142,4 @@ func _physics_process(delta):
 
 	on_air_time += delta
 	prev_jump_pressed = jump
+
