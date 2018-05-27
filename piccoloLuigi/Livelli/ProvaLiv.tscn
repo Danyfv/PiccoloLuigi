@@ -4,13 +4,13 @@
 [ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 position = Vector2( 1, 0 )
 
 [node name="Luigi" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 402.275, 73.0422 )
+position = Vector2( 410.067, 141.223 )
 
 [node name="RigidBody2D" parent="." index="1" instance=ExtResource( 2 )]
 
