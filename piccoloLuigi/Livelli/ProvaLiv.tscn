@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Luigi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=4]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
-position = Vector2( 1, 0 )
+position = Vector2( 40.6553, 25.2352 )
 
 [node name="Luigi" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -17,5 +18,7 @@ position = Vector2( 410.067, 141.223 )
 [node name="StaticBody2D" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 163.254, 424.835 )
+
+[node name="CanvasLayer" parent="." index="3" instance=ExtResource( 4 )]
 
 

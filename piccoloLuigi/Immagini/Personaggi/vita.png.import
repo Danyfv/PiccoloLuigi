@@ -7,10 +7,10 @@ path="res://.import/vita.png-df9f4071860305e62376cad4ca395cb6.stex"
 [deps]
 
 source_file="res://piccoloLuigi/Immagini/Personaggi/vita.png"
-source_md5="4e25413470a9588133ceaec60efbb49d"
+source_md5="06cbf57b4d683aef451c3622bbb6f812"
 
 dest_files=[ "res://.import/vita.png-df9f4071860305e62376cad4ca395cb6.stex" ]
-dest_md5="3c42924cd0dbaca1eb1295aceb5ad148"
+dest_md5="d2ea026a302f0e3bbeea7750afa942be"
 
 [params]
 
