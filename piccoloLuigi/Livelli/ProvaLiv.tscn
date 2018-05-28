@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.6875, 96.4451 )
+extents = Vector2( 41.3162, 57.9094 )
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -19,7 +19,7 @@ position = Vector2( 40.6553, 25.2352 )
 
 [node name="background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 529.845, 286.765 )
+position = Vector2( 529.11, 286.765 )
 scale = Vector2( 7.87868, 7.8625 )
 z_index = -7
 texture = ExtResource( 1 )
@@ -43,10 +43,19 @@ position = Vector2( 163.254, 424.835 )
 
 [node name="CanvasLayer" parent="." index="5" instance=ExtResource( 6 )]
 
-[node name="LeftWall" type="StaticBody2D" parent="." index="6"]
+[node name="Wall" type="Sprite" parent="." index="6"]
 
-position = Vector2( -134.876, 399.965 )
-scale = Vector2( 1.60717, 1.12698 )
+position = Vector2( -149.464, 298.077 )
+scale = Vector2( 0.346144, 4.39907 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="Wall" index="0"]
+
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -54,24 +63,32 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" index="0"]
-
-shape = SubResource( 1 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="LeftWall" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/LeftWall" index="0"]
 
-position = Vector2( -16.1578, 56.0505 )
-scale = Vector2( 0.345914, 0.513996 )
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Wall2" type="Sprite" parent="." index="7"]
+
+position = Vector2( 1167.82, 305.795 )
+scale = Vector2( 0.346144, 4.35887 )
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="RightWall" type="StaticBody2D" parent="." index="7"]
+[node name="LeftWall" type="StaticBody2D" parent="Wall2" index="0"]
 
-position = Vector2( 1149.38, 418.053 )
-scale = Vector2( 1.60717, 1.12698 )
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -79,18 +96,192 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" index="0"]
-
-shape = SubResource( 1 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 
-[node name="Sprite2" type="Sprite" parent="RightWall" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2/LeftWall" index="0"]
 
-position = Vector2( 14.0518, 36.3079 )
-scale = Vector2( 0.345914, 0.513996 )
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ceiling" type="Sprite" parent="." index="8"]
+
+position = Vector2( 506.09, 8.08316 )
+rotation = 1.5708
+scale = Vector2( 0.346144, 10.6048 )
 texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="Ceiling" index="0"]
+
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling/LeftWall" index="0"]
+
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Platform" type="Sprite" parent="." index="9"]
+
+position = Vector2( -75.9551, 457.789 )
+rotation = 1.5708
+scale = Vector2( 0.129428, 0.883809 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="Platform" index="0"]
+
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/LeftWall" index="0"]
+
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Platform2" type="Sprite" parent="." index="10"]
+
+position = Vector2( 37.9841, 404.863 )
+rotation = 1.5708
+scale = Vector2( 0.129428, 0.883809 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="Platform2" index="0"]
+
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2/LeftWall" index="0"]
+
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Platform3" type="Sprite" parent="." index="11"]
+
+position = Vector2( 175.446, 369.578 )
+rotation = 1.5708
+scale = Vector2( 0.129428, 0.883809 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="Platform3" index="0"]
+
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3/LeftWall" index="0"]
+
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Platform4" type="Sprite" parent="." index="12"]
+
+position = Vector2( 298.207, 408.538 )
+rotation = 1.5708
+scale = Vector2( 0.129428, 0.883809 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="Platform4" index="0"]
+
+position = Vector2( 0.157837, -0.477722 )
+scale = Vector2( 1.98719, 1.98033 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4/LeftWall" index="0"]
+
+position = Vector2( 5.72205e-06, -5.00679e-06 )
+scale = Vector2( 0.783002, 0.55842 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 
