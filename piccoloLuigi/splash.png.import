@@ -7,10 +7,10 @@ path="res://.import/splash.png-b4543dcdfd32c3e15615f81b08e938bb.stex"
 [deps]
 
 source_file="res://piccoloLuigi/splash.png"
-source_md5="a4f93693f02edd85e7175aa82da4a41c"
+source_md5="bd5984023f7c9c8fcce95bfc5a86afdf"
 
 dest_files=[ "res://.import/splash.png-b4543dcdfd32c3e15615f81b08e938bb.stex" ]
-dest_md5="a0cbb22c8933b728792b2da637b2785f"
+dest_md5="bb5f04d6d7b56e275d876d46bf9e9e85"
 
 [params]
 
