@@ -6,7 +6,7 @@
 [ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/BloccoLivello1.png" type="Texture" id=7]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/terrain.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
