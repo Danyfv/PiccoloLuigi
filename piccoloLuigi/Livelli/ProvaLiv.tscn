@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://piccoloLuigi/Immagini/Ambiente/background.png" type="Texture" id=1]
-[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Luigi.tscn" type="PackedScene" id=2]
-[ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/parallax-mountain-mountains.png" type="Texture" id=2]
+[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Luigi.tscn" type="PackedScene" id=3]
+[ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/BloccoLivello1.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,25 +19,31 @@ position = Vector2( 40.6553, 25.2352 )
 
 [node name="background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 528.845, 286.765 )
+position = Vector2( 529.845, 286.765 )
 scale = Vector2( 7.87868, 7.8625 )
 z_index = -7
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Luigi" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 555.95, 258.114 )
+scale = Vector2( 3.77966, 6.92348 )
+texture = ExtResource( 2 )
+
+[node name="Luigi" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 410.067, 141.223 )
 
-[node name="RigidBody2D" parent="." index="2" instance=ExtResource( 3 )]
+[node name="RigidBody2D" parent="." index="3" instance=ExtResource( 4 )]
 
-[node name="StaticBody2D" parent="." index="3" instance=ExtResource( 4 )]
+[node name="StaticBody2D" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 163.254, 424.835 )
 
-[node name="CanvasLayer" parent="." index="4" instance=ExtResource( 5 )]
+[node name="CanvasLayer" parent="." index="5" instance=ExtResource( 6 )]
 
-[node name="LeftWall" type="StaticBody2D" parent="." index="5"]
+[node name="LeftWall" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( -134.876, 399.965 )
 scale = Vector2( 1.60717, 1.12698 )
@@ -54,7 +62,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="RightWall" type="StaticBody2D" parent="." index="6"]
+[node name="Sprite" type="Sprite" parent="LeftWall" index="1"]
+
+position = Vector2( -16.1578, 56.0505 )
+scale = Vector2( 0.345914, 0.513996 )
+texture = ExtResource( 7 )
+
+[node name="RightWall" type="StaticBody2D" parent="." index="7"]
 
 position = Vector2( 1149.38, 418.053 )
 scale = Vector2( 1.60717, 1.12698 )
@@ -72,5 +86,11 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Sprite2" type="Sprite" parent="RightWall" index="1"]
+
+position = Vector2( 14.0518, 36.3079 )
+scale = Vector2( 0.345914, 0.513996 )
+texture = ExtResource( 7 )
 
 
