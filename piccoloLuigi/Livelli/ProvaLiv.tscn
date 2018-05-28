@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://piccoloLuigi/Immagini/Ambiente/background.png" type="Texture" id=1]
 [ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Luigi.tscn" type="PackedScene" id=2]
@@ -6,7 +6,12 @@
 [ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.6875, 96.4451 )
+
+[node name="Node2D" type="Node2D" index="0"]
 
 position = Vector2( 40.6553, 25.2352 )
 
@@ -29,5 +34,43 @@ position = Vector2( 410.067, 141.223 )
 position = Vector2( 163.254, 424.835 )
 
 [node name="CanvasLayer" parent="." index="4" instance=ExtResource( 5 )]
+
+[node name="LeftWall" type="StaticBody2D" parent="." index="5"]
+
+position = Vector2( -134.876, 399.965 )
+scale = Vector2( 1.60717, 1.12698 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" index="0"]
+
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RightWall" type="StaticBody2D" parent="." index="6"]
+
+position = Vector2( 1149.38, 418.053 )
+scale = Vector2( 1.60717, 1.12698 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" index="0"]
+
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 
