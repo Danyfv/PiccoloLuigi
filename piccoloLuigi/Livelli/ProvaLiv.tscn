@@ -4,10 +4,10 @@
 [ext_resource path="res://piccoloLuigi/Immagini/Ambiente/parallax-mountain-mountains.png" type="Texture" id=2]
 [ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Luigi.tscn" type="PackedScene" id=3]
 [ext_resource path="res://piccoloLuigi/Livelli/A1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/terrain.png" type="Texture" id=7]
-[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/BloccoLivello3.png" type="Texture" id=8]
+[ext_resource path="res://piccoloLuigi/Personaggi/Protagonista/Vita1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/terrain.png" type="Texture" id=6]
+[ext_resource path="res://piccoloLuigi/Immagini/Ambiente/BloccoLivello3.png" type="Texture" id=7]
+[ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -33,7 +33,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 555.95, 258.114 )
+position = Vector2( 580.437, 249.952 )
 scale = Vector2( 3.77966, 6.92348 )
 texture = ExtResource( 2 )
 
@@ -43,17 +43,13 @@ position = Vector2( 410.067, 141.223 )
 
 [node name="RigidBody2D" parent="." index="3" instance=ExtResource( 4 )]
 
-[node name="StaticBody2D" parent="." index="4" instance=ExtResource( 5 )]
+[node name="CanvasLayer" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 163.254, 424.835 )
-
-[node name="CanvasLayer" parent="." index="5" instance=ExtResource( 6 )]
-
-[node name="Wall" type="Sprite" parent="." index="6"]
+[node name="Wall" type="Sprite" parent="." index="5"]
 
 position = Vector2( -149.464, 298.077 )
 scale = Vector2( 0.346144, 4.39907 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -82,11 +78,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Wall2" type="Sprite" parent="." index="7"]
+[node name="Wall2" type="Sprite" parent="." index="6"]
 
 position = Vector2( 1167.82, 305.795 )
 scale = Vector2( 0.346144, 4.35887 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -115,12 +111,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Ceiling" type="Sprite" parent="." index="8"]
+[node name="Ceiling" type="Sprite" parent="." index="7"]
 
 position = Vector2( 506.09, 8.08316 )
 rotation = 1.5708
 scale = Vector2( 0.346144, 10.6048 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -150,12 +146,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Platform" type="Sprite" parent="." index="9"]
+[node name="Platform" type="Sprite" parent="." index="8"]
 
 position = Vector2( -75.9551, 457.789 )
 rotation = 1.5708
 scale = Vector2( 0.129428, 0.883809 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -185,12 +181,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Platform2" type="Sprite" parent="." index="10"]
+[node name="Platform2" type="Sprite" parent="." index="9"]
 
 position = Vector2( 37.9841, 404.863 )
 rotation = 1.5708
 scale = Vector2( 0.129428, 0.883809 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -220,12 +216,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Platform3" type="Sprite" parent="." index="11"]
+[node name="Platform3" type="Sprite" parent="." index="10"]
 
 position = Vector2( 175.446, 369.578 )
 rotation = 1.5708
 scale = Vector2( 0.129428, 0.883809 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -255,12 +251,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Platform4" type="Sprite" parent="." index="12"]
+[node name="Platform4" type="Sprite" parent="." index="11"]
 
 position = Vector2( 298.207, 408.538 )
 rotation = 1.5708
 scale = Vector2( 0.129428, 0.883809 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -290,9 +286,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="." index="13"]
+[node name="RigidBody2D2" type="RigidBody2D" parent="." index="12"]
 
-position = Vector2( 700.955, 258.927 )
+position = Vector2( 699.595, 397.685 )
 rotation = 0.785398
 scale = Vector2( 1.28814, 1.24092 )
 input_pickable = false
@@ -329,16 +325,16 @@ __meta__ = {
 
 position = Vector2( -0.110012, 0.907995 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="RigidBody2D3" type="RigidBody2D" parent="." index="14"]
+[node name="RigidBody2D3" type="RigidBody2D" parent="." index="13"]
 
-position = Vector2( 560.251, 153.55 )
+position = Vector2( 1034.34, 422.791 )
 rotation = 0.785398
 scale = Vector2( 1.28814, 1.24092 )
 input_pickable = false
@@ -375,14 +371,14 @@ __meta__ = {
 
 position = Vector2( -0.110012, 0.907995 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="RigidBody2D4" type="RigidBody2D" parent="." index="15"]
+[node name="RigidBody2D4" type="RigidBody2D" parent="." index="14"]
 
 position = Vector2( 858.423, 214.621 )
 rotation = 0.785398
@@ -421,11 +417,21 @@ __meta__ = {
 
 position = Vector2( -0.110012, 0.907995 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="Level1Block" parent="." index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 170.22, 424.386 )
+
+[connection signal="input_event" from="Luigi" to="Luigi" method="_on_Luigi_input_event"]
+
+[connection signal="tree_entered" from="Luigi" to="Luigi" method="_on_Luigi_tree_entered"]
+
+[connection signal="body_entered" from="Level1Block" to="Luigi" method="_on_Level1Block_body_entered"]
 
 

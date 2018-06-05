@@ -142,3 +142,10 @@ func _physics_process(delta):
 	prev_jump_pressed = jump
 
 
+func _on_Star_body_entered(body):
+	get_tree().change_scene("res://piccoloLuigi/Livelli/ProvaLiv.tscn")
+
+
+func _on_Level1Block_body_entered(body):
+	get_tree().change_scene("res://piccoloLuigi/Livelli/Livello1.tscn")
+		

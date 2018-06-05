@@ -3,7 +3,7 @@
 [ext_resource path="res://piccoloLuigi/Livelli/BloccoLivello1.gd" type="Script" id=1]
 [ext_resource path="res://piccoloLuigi/Immagini/Ambiente/BloccoLivello1.png" type="Texture" id=2]
 
-[node name="StaticBody2D" type="Area2D"]
+[node name="Level1Block" type="Area2D"]
 
 position = Vector2( 181, 180 )
 input_pickable = false
